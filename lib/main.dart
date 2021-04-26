@@ -25,12 +25,51 @@ class Home extends StatelessWidget {
         title: Text('My First App'),
         backgroundColor: Colors.red[600],
       ),
-      body: Center(
-        child: Icon(
-          Icons.airport_shuttle_rounded,
-          size: 50,
-          color: Colors.blue,
-        ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Text('Hello'),
+          Center(
+            child: ElevatedButton.icon(
+              onPressed: () {print('clicked');},
+              icon: Icon(Icons.mail),
+              label: Text('Email!'),
+            ),
+          ),
+          Card(
+            color: Colors.amber,
+            elevation: 5.0,
+            child: Column(
+              children: [
+                ListTile(
+                  title: Text('1625 Main Street',
+                      style: TextStyle(fontWeight: FontWeight.w500)),
+                  subtitle: Text('My City, CA 99984'),
+                  leading: Icon(
+                    Icons.restaurant_menu,
+                    color: Colors.black,
+                  ),
+                ),
+                Divider(),
+                ListTile(
+                  title: Text('(408) 555-1212',
+                      style: TextStyle(fontWeight: FontWeight.w500)),
+                  leading: Icon(
+                    Icons.contact_phone,
+                    color: Colors.black,
+                  ),
+                ),
+                ListTile(
+                  title: Text('costa@example.com'),
+                  leading: Icon(
+                    Icons.contact_mail,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
